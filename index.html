@@ -181,7 +181,7 @@
 
     .card button {
       width: 100%;
-      padding: 20px;
+      padding: 10px;
       margin: 20px 0px;
 
       border-radius: 5px;
@@ -194,6 +194,18 @@
       color: white;
 
       letter-spacing: .1em;
+
+    }
+
+    .card button:hover {
+      background: white;
+      color: var(--grayish-blue);
+
+      border: 2px solid var(--grayish-blue);
+
+      padding: 8px;
+
+      cursor: pointer;
     }
 
     /* Inverted Card Styles */
@@ -210,6 +222,12 @@
     .card:nth-of-type(2) button {
       background: var(--very-light-grayish-blue);
       color: var(--grayish-blue);
+    }
+
+    .card:nth-of-type(2) button:hover {
+      background: hsl(237, 63%, 64%);
+      color: white;
+      border-color: white;
     }
 
     .card:nth-of-type(2) .price {
