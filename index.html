@@ -253,7 +253,40 @@
       position: relative;
     }
 
+
+    /* Annual Monthly Toggle */
+
+    .annually {
+      display: inline-block;
+    }
+
+    .monthly {
+      display: none;
+    }
+
+    .show-monthly .annually {
+      display: none;
+    }
+
+    .show-monthly .monthly {
+      display: inline-block;
+    }
   </style>
+
+  <script>
+    function togglePrice(element) {
+      if (element.checked) {
+        Array.from(document.getElementsByClassName("price")).forEach((element)=>{
+          element.classList.add("show-monthly");
+        });
+      } else {
+        Array.from(document.getElementsByClassName("price")).forEach((element)=>{
+          element.classList.remove("show-monthly");
+        });
+      }
+
+    }
+  </script>
 </head>
 <body>
   <div id="Background">
@@ -263,7 +296,7 @@
         <div id="Toggle">
           <span>Annually</span>
           <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" onchange="togglePrice(this)">
             <span class="slider"></span>
           </label>
           <span>Monthly</span>
@@ -272,7 +305,7 @@
       <div id="CardWrapper">
         <div class="card">
           <h2>Basic</h2>
-          <p class="price"><span class="symbol">&dollar;</span>199.99</p>
+          <p class="price"><span class="symbol">&dollar;</span><span class="annually">199.99</span><span class="monthly">19.99</span></p>
           <hr>
           <p>500 GB Storage</p>
           <hr>
@@ -284,7 +317,7 @@
         </div>
         <div class="card">
           <h2>Professional</h2>
-          <p class="price"><span class="symbol">&dollar;</span>249.99</p>
+          <p class="price"><span class="symbol">&dollar;</span><span class="annually">249.99</span><span class="monthly">24.99</span></p>
           <hr>
           <p>1 TB Storage</p>
           <hr>
@@ -296,7 +329,7 @@
         </div>
         <div class="card">
           <h2>Master</h2>
-          <p class="price"><span class="symbol">&dollar;</span>399.99</p>
+          <p class="price"><span class="symbol">&dollar;</span><span class="annually">399.99</span><span class="monthly">39.99</span></p>
           <hr>
           <p>2 TB Storage</p>
           <hr>
